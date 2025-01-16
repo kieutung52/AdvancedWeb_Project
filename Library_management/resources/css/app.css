@@ -1,3 +1,22 @@
+@import "@fortawesome/fontawesome-free/css/all.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: 'CustomFont';
+    src: url('../fonts/Apasih-ywpWe.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Deserta';
+    src: url('../fonts/Deserta.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+* {
+    font-family: 'CustomFont', 'Deserta';
+}
