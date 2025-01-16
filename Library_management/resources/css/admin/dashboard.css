@@ -1,0 +1,179 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+}
+
+/* Navigation Styles */
+#navigation {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 15%;
+    height: 100vh;
+    background-color: #4a90e2;
+    padding: 20px;
+    color: white;
+}
+
+#nav-logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#nav-items {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#nav-items:hover {
+    background-color: #357abd;
+}
+
+/* Flexbox layout to push logout button to the bottom */
+#navigation > .nav-links {
+    flex-grow: 1;
+}
+
+/* Logout Form Styles */
+form {
+    margin-top: auto;
+}
+
+.logout-button {
+    background-color: #e74c3c;
+    color: white;
+    font-size: 18px;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+    background-color: #c0392b;
+}
+
+/* Main content Styles */
+#main {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #f4f7fc;
+    overflow-y: auto;
+}
+
+/* Icon styles */
+.logout-button i {
+    margin-right: 8px;
+}
+
+
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+    background-color: red;
+}
+.alert-success {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}
+.alert-error {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}
+
+
+.admin_create {
+    justify-self: center;
+    width: 80%;
+    height: 60px;
+
+    margin: 15px 0;
+
+    border: 2px solid black;
+    border-radius: 12px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 40px;
+
+    transform: scale(1);
+    transition: all 0.5s;
+}
+
+.admin_create > i {
+    margin: 0 10px;
+}
+
+.admin_create:hover {
+    background-color: #357abd;
+    color: white;
+    border: none;
+    transform: scale(1.2);
+}
+
+.admin_create-form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: 20px auto;
+}
+
+.admin_create-form label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+.admin_create-form input,
+.admin_create-form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.admin_create-form button {
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.admin_create-form button:hover {
+    background-color: #27ae60;
+}
