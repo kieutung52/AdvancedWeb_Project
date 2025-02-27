@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use App\Models\Transaction;
-
+use Illuminate\Support\Facades\Auth;
 class TransactionController extends Controller
 {
     public function index()
@@ -48,5 +48,14 @@ class TransactionController extends Controller
 
             $transaction->save();
         }
+    }
+
+    public function userTransactions()
+    {
+        $user = Auth::user();
+        $transactions = Transaction::where('user_id', $user->id)->get();
+        $borrowedCount = $transactions->where('returned', false)->count();
+        $returnedCount = $transactions->where('returned', true)->count();
+        return view('user.transactions', compact('transactions', 'borrowedCount', 'returnedCount'));
     }
 }

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\web\BookController;
+use App\Http\Controllers\web\BookRequestController;
 use App\Http\Controllers\web\LoginController;
 use App\Http\Controllers\web\TransactionController;
 use App\Http\Controllers\web\UserController;
@@ -21,20 +22,18 @@ Route::get('/register', function () {
 Route::post('/register', [LoginController::class, 'register']);
 
 Route::middleware('web')->group(function () {
-    Route::post('logout', [LoginController::class, 'logout']);
+    Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 });
 
 Route::middleware('auth')->group(function () {
-    Route::get('dashboard', function () {
-        return view('admin.dashboard');
-    })->name('dashboard');
-    Route::get('/home', function () {
-        return view('admin.home');
-    })->name('home');
-    
-    Route::get('ushome', function () {
-        return view('user.us_home');
-    })->name('userhome');
+    Route::get('dashboard', [UserController::class, 'homeAdmin'])->name('dashboard');
+
+    Route::get('/borrowed_request', [BookRequestController::class, 'index'])->name('ad_request.index');
+    Route::get('/admin/request/{id}/details', [BookRequestController::class, 'edit'])->name('ad_request.details');
+    Route::patch('/admin/request/accept/{id}', [BookRequestController::class, 'accept'])->name('ad_request.accept');
+    Route::patch('/admin/request/cancel/{id}', [BookRequestController::class, 'cancel'])->name('ad_request.cancel');
+    Route::post('/request/create',[BookRequestController::class, 'store'])->name('request.create');
+
 
     Route::get('/books', [BookController::class, 'index'])->name('ad_book.index');
     Route::delete('/books/{id}', [BookController::class, 'destroy'])->name('ad_book.destroy');
@@ -57,4 +56,11 @@ Route::middleware('auth')->group(function () {
     Route::get('/transactions', [TransactionController::class, 'index'])->name('ad_transaction.transactions');
     Route::get('/transactions/{id}/edit', [TransactionController::class, 'edit'])->name('ad_transaction.edit');
     Route::put('/transactions/{id}', [TransactionController::class, 'update'])->name('ad_transaction.update');
+
+    // Routes cho user
+    Route::get('/home', [UserController::class, 'home'])->name('home');
+    Route::get('/bookshelf', [BookController::class, 'bookshelf'])->name('bookshelf');
+    Route::get('/transactions-user', [TransactionController::class, 'userTransactions'])->name('transactions');
+    //Route để xem chi tiết sách
+    Route::get('/books/{id}/details', [BookController::class, 'show'])->name('book.details');
 });

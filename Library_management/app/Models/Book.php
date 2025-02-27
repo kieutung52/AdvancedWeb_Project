@@ -14,6 +14,7 @@ class Book extends Model
         'author',
         'genre',
         'language',
+        'description',
         'status',
     ];
     public function transactions()
@@ -21,4 +22,8 @@ class Book extends Model
         return $this->hasMany(Transaction::class);
     }
 
+    public function bookRequests()
+    {
+        return $this->hasMany(BookRequest::class);
+    }
 }

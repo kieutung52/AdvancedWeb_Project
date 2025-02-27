@@ -75,5 +75,16 @@ class BookController extends Controller
             return response()->json(['success' => false, 'message' => 'Book could not be added.']);
         }
     }
+    
+    public function bookshelf()
+    {
+        $books = Book::all();
+        return view('user.bookshelf', compact('books'));
+    }
 
+    public function show($id)
+    {
+        $book = Book::findOrFail($id);
+        return view('user.book_details', compact('book'));
+    }
 }

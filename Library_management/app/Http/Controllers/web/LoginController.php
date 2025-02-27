@@ -35,7 +35,7 @@ class LoginController extends Controller
                 if($user->role === 'admin'){
                     return redirect()->route('dashboard');
                 }
-                return redirect()->route('userhome');
+                return redirect()->route('home');
             }
             return redirect()->back()->withErrors(['password' => 'Incorrect name or password.'])->withInput();
         } catch (ValidationException $e) {
@@ -62,7 +62,7 @@ class LoginController extends Controller
                 return redirect()->route('dashboard');
             }
     
-            return redirect()->route('userhome');
+            return redirect()->route('home');
         } catch (ValidationException $e) {
             return redirect()->back()->withErrors($e->errors())->withInput();
         }

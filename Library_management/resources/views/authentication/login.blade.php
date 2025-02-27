@@ -27,8 +27,8 @@
                 </div>
                 
                 <input type="submit" value="Login">
-                <h4>OR LOGIN WITH GOOGLE</h4>
-                <a href="/login/google"><button type="button" class="logwithgg"><i class="fa-brands fa-google"></i><span> Log In with Google</span></button></a>
+                {{-- <h4>OR LOGIN WITH GOOGLE</h4>
+                <a href="/login/google"><button type="button" class="logwithgg"><i class="fa-brands fa-google"></i><span> Log In with Google</span></button></a> --}}
             </form>
             <div class="register-link">
                 <p>Don't have an account? <a href="/register">Register here</a></p>
