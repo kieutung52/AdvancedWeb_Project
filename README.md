@@ -1,5 +1,5 @@
 # AWDev_Project
-
+**Kieu Thanh Tung - 22010214**
 ## About the Project
 This is a library management system that integrates a user-friendly UI, allowing regular users to browse and borrow books online. The project aims to provide a flexible and convenient platform for users. Upon logging in, users are redirected to an appropriate interface based on their roles.
 
