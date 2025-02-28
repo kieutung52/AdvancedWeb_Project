@@ -64,10 +64,15 @@ Open your browser and navigate to [http://localhost:8000](http://localhost:8000)
 
 ---
 ## UML
+### **Class Diagram**
 ![Class Diagram](./images_for_readme/imagesForWebsite/Screenshot%202025-02-28%20102828.png)
+### **Use Case Diagram**
 ![Use Case Diagram](./images_for_readme/imagesForWebsite/Screenshot%202025-02-28%20095627.png)
+### **Use Case:Borrow Request**
 ![Use Case:Borrow Request](./images_for_readme/imagesForWebsite/Screenshot%202025-02-28%20101620.png)
+### **Sequence Diagram:Borrow Request**
 ![Sequence Diagram:Borrow Request ](./images_for_readme/imagesForWebsite/Screenshot%202025-02-28%20101923.png)
+### **Use Case: Approve book borrowing request**
 ![Use Case: Approve book borrowing request](./images_for_readme/imagesForWebsite/Screenshot%202025-02-28%20102348.png)
 ---
 ## Screenshots
